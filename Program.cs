@@ -7,7 +7,6 @@ namespace VectorImplemenatationByArray
         public static void Main(string[] args)
         {
             int[] numbers = { 1, 2, 3, 4, 5 };
-            PrintArray(PopFront(numbers));
         }
         
          static void PrintArray(int[] nums)
@@ -81,6 +80,7 @@ namespace VectorImplemenatationByArray
             return temp;
         }
 
+        //pop from front
         static int[] PopFront(int[] nums)
         {
             //delete the front element
@@ -92,6 +92,20 @@ namespace VectorImplemenatationByArray
             for (int i = 0; i < temp.Length; i++)
             {
                 temp[i] = nums[i + 1];
+            }
+
+            return temp;
+        }
+
+        static int[] Reverse(int[] nums)
+        {
+            //create new array of same size
+            int[] temp = new int[nums.Length];
+            
+            //time to populate new array
+            for (int i = (nums.Length - 1); i >= 0; i--)
+            {
+                temp[Math.Abs(i - (nums.Length - 1))] = nums[i];
             }
 
             return temp;
