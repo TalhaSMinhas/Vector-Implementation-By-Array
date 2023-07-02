@@ -7,6 +7,7 @@ namespace VectorImplemenatationByArray
         public static void Main(string[] args)
         {
             int[] numbers = { 1, 2, 3, 4, 5 };
+            PrintArray(PopFront(numbers));
         }
         
          static void PrintArray(int[] nums)
@@ -82,19 +83,15 @@ namespace VectorImplemenatationByArray
 
         static int[] PopFront(int[] nums)
         {
-            //determine length
-            int length = nums.Length;
-            
-            //create smaller array
-            int[] temp = new int[length - 1];
-            
-            //set fron of array to zero
+            //delete the front element
             nums[0] = 0;
+            
+            // create a new array for remaining elements to be copied to
+            int[] temp = new int[nums.Length - 1];
 
-            //copy remaining elements to new array
             for (int i = 0; i < temp.Length; i++)
             {
-                temp[i] = nums[i];
+                temp[i] = nums[i + 1];
             }
 
             return temp;
